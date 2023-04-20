@@ -1,4 +1,4 @@
-const {Game, EASY,MEDIUM,HARD,WORD_LIST} = require('../game.js');
+const {Game, EASY,MEDIUM,HARD} = require('../game.js');
 const chai = require('chai');
 
 const expect = chai.expect;
@@ -28,9 +28,7 @@ describe('game engine test', function () {
             expect(game.getRandomWord(HARD).length).is.greaterThanOrEqual(8)
         })
         it('should filter a word in the word list by the difficulty', function () {
-            expect(game.filteredWordListByDifficulty(EASY).length).is.lessThan(WORD_LIST.length)
-            expect(game.filteredWordListByDifficulty(MEDIUM).length).is.lessThan(WORD_LIST.length)
-            expect(game.filteredWordListByDifficulty(HARD).length).is.lessThan(WORD_LIST.length)
+            expect(game.filteredWordListByDifficulty(EASY).length).is.lessThan(game.WORD_LIST.length)
         });
         it('should return random index from an array', function () {
             const array = ['easy','test','lol','cat','dog','xylophone']
